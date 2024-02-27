@@ -1,5 +1,5 @@
-from parser.parser import Parser
 import asyncio
+from parser.parser import Parser
 
 
 async def main():
