@@ -63,7 +63,6 @@ class Parser:
                 "&categoryId=" + category_id +
                 "&beginIndex="
         )
-        #
         paginate_tasks = [self.paginate(url + str(n * 72)) for n in range(1, random.randint(2, 3))]
         await asyncio.gather(*paginate_tasks)
 
