@@ -15,7 +15,7 @@ def get_proxy() -> dict[str, str]:
         ...
 
 
-def check_proxy(proxy) -> bool:
+def check_proxy(proxy: dict[str, str]) -> bool:
     """
     Checking proxy for validity
     :param proxy:
@@ -31,7 +31,7 @@ def check_proxy(proxy) -> bool:
         return False
 
 
-def get_proxies_from_file(filename, proxy_format="http") -> list[dict[str, str]]:
+def get_proxies_from_file(filename: str, proxy_format: str = "http") -> list[dict[str, str]]:
     """
     Gets proxies from file and transforms they to valid format (from ip:port:user:pass to user:pass@ip:port)
     :param filename: proxies filename or location

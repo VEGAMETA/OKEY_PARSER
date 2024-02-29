@@ -3,7 +3,7 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import padding
 
 
-def _get_cookie_spsc_from_encrypted(rsa_key, encrypted_data) -> str:
+def _get_cookie_spsc_from_encrypted(rsa_key: str, encrypted_data: str) -> str:
     """
     Returns decrypted spsc for cookies
     :param rsa_key: private rsa key from your response
@@ -16,7 +16,7 @@ def _get_cookie_spsc_from_encrypted(rsa_key, encrypted_data) -> str:
     return decrypted_data.decode("utf-8")
 
 
-def _get_rsa_key_and_encrypted_spsc_from_html(html) -> tuple[str, str]:
+def _get_rsa_key_and_encrypted_spsc_from_html(html: str) -> tuple[str, str]:
     """
     Returns rsa key and encrypted data from html by regex
     :param html: your html (response.text)
@@ -34,7 +34,7 @@ def _get_rsa_key_and_encrypted_spsc_from_html(html) -> tuple[str, str]:
     return rsa_private_key, hex_string
 
 
-def _get_spid_from_html(html) -> str:
+def _get_spid_from_html(html: str) -> str:
     """
     Returns spid for cookies from html by regex
     :param html: your html (response.text)
@@ -48,7 +48,7 @@ def _get_spid_from_html(html) -> str:
     return spid
 
 
-def get_spid_spsc_cookies_from_html(html) -> tuple[str, str]:
+def get_spid_spsc_cookies_from_html(html: str) -> tuple[str, str]:
     """
     Returns spid and spsc from html (response.text) for cookies
     :param html:

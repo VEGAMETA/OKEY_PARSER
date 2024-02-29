@@ -2,7 +2,7 @@ import csv
 import config
 
 
-def save_to_csv(data_list) -> None:
+def save_to_csv(data_list: list[list]) -> None:
     """
     Saves data to csv file
     :param data_list: data
