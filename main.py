@@ -1,3 +1,4 @@
+import sys
 import asyncio
 from config import address, parse_categories_urls, proxies
 from parser.okey_parser import OKEYParser
@@ -10,4 +11,6 @@ async def main():
 
 
 if __name__ == '__main__':
+    if sys.platform.startswith('win'):
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
     asyncio.run(main())
